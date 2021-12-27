@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:sriaTsuji/actions-test.git",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "typescript": "^4.5.4"
   },
