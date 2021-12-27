@@ -3,8 +3,13 @@ on:
   pull_request:
     branches: [master]
 jobs:
-  Explore-GitHub-Actions:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "hogehoge"
+      - uses: actions/checkout@v2
+      - name: Use Node.js v16.13.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.13.1"
+      - run: yarn install
+      - run: yarn run test
